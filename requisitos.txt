@@ -1,0 +1,30 @@
+R-1: Existen tres elementos, estaciones de tierra (ET), drones (Drone) y base de operaciones (BO).
+R-2: La BO es única.
+R-3: Puede haber tantos drones y ETs como puertos en el ordenador disponibles (a partir del 10000).
+R-4: Todos los elementos del sistema cuentan con un ID alfanumérico único.
+R-5: Las comunicaciones entre elementos son seguras, es decir, confidenciales y autenticadas.
+
+R-6: Una ET puede vincularse a la BO.
+R-7: Una ET puede desvincularse de la BO, si estaba previamente vinculada a ella.
+R-8: Una ET puede ordenar a un dron volar, si este estaba previamente conectado a ella.
+R-9: Una ET puede ordenar a un dron aterrizar, si este estaba previamente conectado a ella.
+R-10: Una ET puede enviar mensajes a la BO, si estaba previamente vinculada a ella.
+R-11: Una ET puede enviar mensajes a otra ET.
+R-12: Una ET puede enviar ficheros a la BO, si estaba previamente vinculada a ella.
+R-13: Una ET puede enviar ficheros a otra ET.
+R-14: Una ET puede desconectar a un dron, si este estaba previamente conectado a ella.
+R-15: Una ET debe poder retransmitir los mensajes FLY y LAND de la BO a sus respectivos drones conectados.
+
+R-16: Un dron puede vincularse a una ET.
+R-17: Un dron puede desvincularse de una ET, si estaba previamente vinculado a ella.
+R-18: Un dron puede conectarse a una única ET, si estaba previamente vinculado a ella.
+R-19: Un dron puede desconectarse de una ET, si estaba previamente conectado a ella.
+R-20: Un dron debe enviar cada 2 segundos a la ET a la que esté conectado un mensaje con el estado de vuelo y la batería.
+
+R-21: La BO puede ordenar a un dron a volar a través de la ET a la que esté conectado.
+R-22: La BO puede ordenar a un dron a aterrizar a través de la ET a la que esté conectado.
+R-23: La BO puede obtener el estado de todos los elementos del sistema (ETs y drones).
+R-24: La BO puede hacer aterrizar y desconectar a todos los drones del sistema a través de las ETs.
+R-25: La BO puede enviar mensajes a una ET, si esta estaba previamente vinculada a ella.
+R-26: La BO puede enviar ficheros a una ET, si esta estaba previamente vinculada a ella.
+

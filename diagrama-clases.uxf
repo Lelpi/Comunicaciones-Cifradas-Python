@@ -1,0 +1,71 @@
+<diagram program="umletino" version="15.0.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>650</x><y>630</y><w>420</w><h>200</h></coordinates><panel_attributes>BO
+--
+- elements: Dictionary{String: Int, String: List[String], String: List[String]}
+--
++ parse_arguments(input_str: String): void
++ fly_land(drone_id: String, message: String): void
++ fly(drone_id: String): void
++ land(drone_id: String): void
++ get_status(): Dictionary
++ shutdown(): void
++ parse_listen(recv_json: Dictionary, connection: socket): void
++ exit(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>280</x><y>630</y><w>350</w><h>200</h></coordinates><panel_attributes>ET
+--
+- linked_drones: List[String]
+- connected_drones: Dictionary{}
+--
++ parse_arguments(input_str: String): void
++ fly_land(drone_id: String, message: String): void
++ fly(drone_id: String): void
++ land(drone_id: String): void
++ disconnect(drone_id: String): void
++ parse_listen(recv_json: Dictionary, connection: socket): void
++ exit(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1090</x><y>630</y><w>350</w><h>200</h></coordinates><panel_attributes>Drone
+--
+- connected_et: String
+- battery: Double
+- fly: Boolean
+- telemetry_thread: Thread()
+--
++ parse_arguments(input_str: String): void
++ unlink(et_id: String): void
++ connect(et_id: String): void
++ disconnect(): void
++ telemetry(): void
++ parse_listen(recv_json: Dictionary, connection: socket): void
++ exit(): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>680</x><y>60</y><w>370</w><h>520</h></coordinates><panel_attributes>/Element/
+--
+# ID: String
+# listen_socket: socket()
+# send_socket: socket()
+# private_key: String
+# public_key: String
+# linked_aes: Dictionary{String: Tuple(AES(), AES())}
+# menu_thread: Thread()
+# listen_thread: Thread()
+--
++ menu(): void
++ finish(): void
+/+ parse_arguments(input_str: String): void/
++ link(id_dest: String): void
++ unlink(id_dest: String): void
++ send_msg_to_element(message: String, dest_id: String): void
++ send_file(f_path: String, dest_id: String): void
++ get_port(id: String): Int
++ connect_socket(dest: String, is_send_socket: Boolean): socket()
++ send_msg(message: String, s: socket()): void
++ recv_msg(conn: socket()): String
++ open_listen_socket(): void
++ listen(): void
++ disconnect_socket(s: socket()): void
+/+ parse_listen(recv_json: Dictionary, connection: socket): void/
+_+ print_listen(s: String): void_
+_+ get_keys(d: Dictionary): void_
++ encrypt_str(string: String, dest_id: String): String
++ decrypt_str(string: String, src_id: String): String
++ encrypt_bytes(bytes: Bytes, dest_id: String): Bytes
++ decrypt_bytes(bytes: Bytes, src_id: String): Bytes
++ enc_json(send_json: Dictionary, msg_type: String, dest_id: String): Dictionary
++ dec_json(recv_json: Dictionary): Dictionary
+/+ exit(): void/</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>850</x><y>570</y><w>430</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;410;60</additional_attributes></element><element><id>Relation</id><coordinates><x>850</x><y>570</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>440</x><y>570</y><w>440</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>420;10;10;60</additional_attributes></element></diagram>
